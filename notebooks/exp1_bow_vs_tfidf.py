@@ -20,8 +20,8 @@ import os
 
 import dagshub
 
-mlflow.set_tracking_uri('https://dagshub.com/campusx-official/mlops-mini-project.mlflow')
-dagshub.init(repo_owner='campusx-official', repo_name='mlops-mini-project', mlflow=True)
+mlflow.set_tracking_uri('https://dagshub.com/aprotiim/mlops-mini-project.mlflow')
+dagshub.init(repo_owner='aprotiim', repo_name='mlops-mini-project', mlflow=True)
 
 # Load the data
 df = pd.read_csv('https://raw.githubusercontent.com/campusx-official/jupyter-masterclass/main/tweet_emotions.csv').drop(columns=['tweet_id'])
@@ -154,7 +154,7 @@ with mlflow.start_run(run_name="All Experiments") as parent_run:
                 mlflow.log_metric("f1_score", f1)
                 
                 # Log model
-                mlflow.sklearn.log_model(model, "model")
+                #mlflow.sklearn.log_model(model, "model")
                 
                 # Save and log the notebook
                 mlflow.log_artifact(__file__)
