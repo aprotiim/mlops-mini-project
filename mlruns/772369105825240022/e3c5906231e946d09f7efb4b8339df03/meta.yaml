@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/772369105825240022/e3c5906231e946d09f7efb4b8339df03/artifacts
+end_time: 1764122000576
+entry_point_name: ''
+experiment_id: '772369105825240022'
+lifecycle_stage: active
+run_id: e3c5906231e946d09f7efb4b8339df03
+run_name: crawling-sponge-858
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764121966167
+status: 3
+tags: []
+user_id: '91967'

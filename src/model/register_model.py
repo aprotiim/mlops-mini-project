@@ -7,8 +7,7 @@ import os
 import dagshub
 
 # Set up DagsHub credentials for MLflow tracking
-mlflow.set_tracking_uri('https://dagshub.com/aprotiim/mlops-mini-project.mlflow')
-dagshub.init(repo_owner='aprotiim', repo_name='mlops-mini-project', mlflow=True)
+mlflow.set_tracking_uri('http://127.0.0.1:5000')
 
 
 

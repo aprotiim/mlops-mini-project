@@ -13,8 +13,8 @@ import os
 
 import dagshub
 # Set up MLflow tracking URI
-mlflow.set_tracking_uri('https://dagshub.com/aprotiim/mlops-mini-project.mlflow')
-dagshub.init(repo_owner='aprotiim', repo_name='mlops-mini-project', mlflow=True)
+mlflow.set_tracking_uri('http://127.0.0.1:5000')
+#dagshub.init(repo_owner='aprotiim', repo_name='mlops-mini-project', mlflow=True)
 
 
 
@@ -132,14 +132,8 @@ def main():
                     mlflow.log_param(param_name, param_value)
             
             # Log model to MLflow
-            #mlflow.sklearn.log_model(clf, "model")
-            mlflow.sklearn.log_model(
-                sk_model=clf,
-                artifact_path="model_artifacts",
-                # Optional: Define input example for better model serving/deployment
-                #input_example=X_train[:2]
-            )
-            
+            mlflow.sklearn.log_model(clf, "model")
+           
             # Save model info
             save_model_info(run.info.run_id, "model", 'reports/experiment_info.json')
             
@@ -151,6 +145,10 @@ def main():
 
             # Log the evaluation errors log file to MLflow
             mlflow.log_artifact('model_evaluation_errors.log')
+          
+            
+            logger.info('Model evaluation process completed successfully')
+            
         except Exception as e:
             logger.error('Failed to complete the model evaluation process: %s', e)
             print(f"Error: {e}")
