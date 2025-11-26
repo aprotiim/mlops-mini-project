@@ -29,9 +29,7 @@ jobs:
 
       - name: run pipeline
         run: |
-          mlflow ui
-        run: |
-          dvc repro
+          mlflow ui & dvc repro
 
       - name: Run model tests
        # env:
